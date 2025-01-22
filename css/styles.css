@@ -170,3 +170,8 @@ button {
   font-weight: bold;
   animation: thumbsUpAnimation 2s ease-in-out;
 }
+.adsense-container {
+  text-align: center; /* Centers the ad on the page */
+  margin-top: 20px;    /* Adds some space above the ad */
+  margin-bottom: 20px; /* Adds some space below the ad */
+}
