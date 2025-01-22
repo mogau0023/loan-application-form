@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Application Form</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <h1>Loan Application Form</h1>
+    <form id="loanForm">
+      <div class="form-group">
+        <label for="name">Full Name <span class="required">*</span></label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address <span class="required">*</span></label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number <span class="required">*</span></label>
+        <div class="phone-container">
+          <span class="country-code">+27</span>
+          <input 
+            type="tel" 
+            id="phone" 
+            name="phone" 
+            placeholder="Enter your phone number" 
+            maxlength="9" 
+            pattern="[0-9]{9}" 
+            required>
+        </div>
+        <small id="phoneError" class="error-message"></small>
+      </div>
+      <div class="form-group">
+        <label for="amount">Loan Amount (R100 - R1000) <span class="required">*</span></label>
+        <input 
+          type="number" 
+          id="amount" 
+          name="amount" 
+          placeholder="Enter loan amount" 
+          min="100" 
+          max="1000" 
+          required>
+        <small id="amountError" class="error-message"></small>
+        <small id="repayableAmount" class="repayable-message"></small>
+        <small id="dueDateMessage" class="due-date-message"></small>
+      </div>
+      <div class="form-group">
+        <label for="collateral">Collateral <span class="required">*</span></label>
+        <div class="collateral-suggestions">
+          <button type="button" class="suggestion" data-value="Laptop">Laptop</button>
+          <button type="button" class="suggestion" data-value="Phone">Phone</button>
+          <button type="button" class="suggestion" data-value="Tablet">Tablet</button>
+        </div>
+        <input 
+          type="text" 
+          id="collateral" 
+          name="collateral" 
+          placeholder="Enter collateral item" 
+          required>
+        <small id="collateralError" class="error-message"></small>
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+          I have read and agree to the <a href="tnc.html" target="_blank">Terms and Conditions</a>.<br>
+        </label>
+      </div>
+      <button type="submit" class="btn">Submit Application</button>
+    </form>
+  </div>
+
+  <div id="confirmationModal" class="modal hidden">
+    <div class="modal-content">
+      <p id="confirmationMessage" class="confirmation-message"></p>
+      <p id="agreementMessage"></p>
+      <div class="modal-buttons">
+        <button id="continueButton">Continue</button>
+        <button id="cancelButton">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <div id="contactedModal" class="modal">
+    <div class="modal-content">
+      <p>Your application was submitted successfully. Check your emails, You will be contacted shortly.</p>
+      <button id="closeContactedModal">Close</button>
+    </div>
+  </div>
+
+
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>
